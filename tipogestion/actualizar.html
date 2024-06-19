@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Actualizar tipo de gestión </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="../js/tipogestion.js"></script>
+
+    <body onload="obtenerIdActualizacion()">
+        <div class="container">
+            <h1>Actualizar Tipo de Gestion</h1>
+            <form>
+                <!--Formulario para ingreso de tipo gestion-->
+                <div class="mb-3">
+                  <label for="txt_nombre_tipo_gestion" class="form-label">Tipo Gestión</label>
+                  <input type="text" class="form-control" id="txt_nombre_tipo_gestion" aria-describedby="nombreHelp">
+                  <div id="nombreHelp" class="form-text">Ingrese el nuevo nombre de tipo de gestion.</div>
+                </div>
+                <!--Botones-->
+                <input type="button" value="Actualizar" class=" btn btn-primary" onclick="actualizarTipoGestion();">
+                <input type="button" value="Cancelar" class=" btn btn-secondary" onclick="javascript:history.back()">
+              </form>
+        </div>
+        <!-- MODALES DE EXITO Y ERROR-->
+
+    <!-- MODAL EXITO ACTUALIZAR-->
+<div class="modal fade" id="exitoModalActualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Éxito al actualizar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Has actualizado este registro correctamente.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="location.href='../tipogestion/listar.html'">Volver al listado</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL ERROR ACTUALIZAR-->
+  <div class="modal fade" id="errorModalActualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Error al actualizar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         No se ha podido modificar este registro ya que está siendo utilizado por otra tabla.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="location.href='../tipogestion/listar.html'">Volver al listado</button>
+        </div>
+      </div>
+    </div>
+  </div>     
+  
+    </body>
+
+</html>
